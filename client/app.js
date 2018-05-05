@@ -6,12 +6,13 @@ import configureStore from './store/configureStore';
 import App from './components/ItemList';
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 import { baseUrl} from './components/commonComponents/common';
-import Main from './components/Main.component';
-import LoginComponent from './components/login/login';
-import TraderMainComponent from './components/TraderDesktop/main.trader.component';
-import TableComponent from './components/TraderDesktop/table.component';
 import * as firebase from 'firebase';
 var injectTapEventPlugin = require("react-tap-event-plugin");
+import Login from './components/groww/login/index';
+import Home from './components/groww/Home';
+import AboutUs from './components/groww/Home/aboutus';
+import Profile from './components/groww/Home/profile';
+import ContactUs from './components/groww/Home/ contactUs';
 
 // Initialize Firebase
 var config = {
@@ -30,9 +31,14 @@ render(
     <Provider store={ store }>
       <Router history={hashHistory}>
         <Route path="/" component={ App }>
-          <IndexRoute component={ LoginComponent } />
-          <Route path="/view/:id" component={ TraderMainComponent }>
-          </Route>
+          {/* <IndexRoute component={ LoginComponent } />
+          <Route path="/view/:id" component={ TraderMainComponent }/> */}
+          <IndexRoute component={Login}/>
+          <Route path="aboutus" component={Home}/>
+          <Route path="aboutus/team" component={AboutUs}/>
+          <Route path="aboutus/profile" component={Profile}/>
+          <Route path="aboutus/contactus" component={ContactUs}/>
+          
         </Route>
       </Router>
     </Provider>,

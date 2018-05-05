@@ -109,3 +109,19 @@ export function nMessage(state=[],action){
             return state;    
     }
 }
+
+const loginDetails={
+    email:"utkarsh.sriv12@gmail.com",
+    pass: "groww"
+}
+
+export function loginCred(state=loginDetails,action){
+
+    switch(action.type){
+        case 'LOGIN':
+          return '';
+
+        default:
+            return state;  
+    }
+}

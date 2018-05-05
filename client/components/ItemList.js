@@ -23,7 +23,11 @@ import Main from './Main.component';
             ordersLeft : state.deleteItems,
             notification:state.notification,
             nMessage:state.nMessage,
-            getMap:state.setMap
+            getMap:state.setMap,
+
+
+            loginCred: state.loginCred
+            
         };
     }
 
